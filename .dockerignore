@@ -7,7 +7,6 @@ requirements_test.txt
 pyproject.toml
 LICENSE
 README.md
-Makefile
 .flaskenv
 .gitignore
 access.txt

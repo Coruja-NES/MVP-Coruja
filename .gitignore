@@ -73,6 +73,7 @@ db.sqlite3-journal
 
 # Flask stuff:
 instance/
+migrations/
 
 # Scrapy stuff:
 .scrapy

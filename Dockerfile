@@ -5,7 +5,7 @@ ENV FLASK_APP=coruja.app:create_app \
 
 WORKDIR /var/www
 
-COPY . .
+COPY requirements.txt .
 
 RUN apk add --virtual .build-dependencies --no-cache \
     build-base \
@@ -18,6 +18,9 @@ RUN apk add --virtual .build-dependencies --no-cache \
     linux-headers \
     pcre-dev && \
     python -m pip install -r requirements.txt && \
-    apk del .build-dependencies
+    apk del .build-dependencies && \
+    apk add make
+
+COPY . .
 
 CMD [ "tail", "-f", "/dev/null" ]

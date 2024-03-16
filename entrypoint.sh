@@ -11,9 +11,6 @@ done
 
 echo "Database connection established."
 
-flask db upgrade head  # Inicialização do banco de dados e migração
-flask createroles
-flask createsu
 uwsgi --ini wsgi.ini
 
 

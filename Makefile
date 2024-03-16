@@ -11,7 +11,7 @@ init:
 	@python -m flask db migrate
 	@python -m flask db upgrade
 	@python -m flask createroles
-	@python -m flask createsu >> access.txt
+	@python -m flask createsu
 server:
 	@python -m flask run --debug
 server-production:
