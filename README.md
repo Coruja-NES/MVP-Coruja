@@ -9,8 +9,15 @@ Este projeto contém Flask como aplicação web configurado com o servidor uWSGI
 1. Clone este repositório;
 2. Modifique o arquivo `.env` adicionando uma senha e nome do banco de dados de sua escolha;
 3. Modifique o arquivo `.secrets.toml` adicionando uma chave secreta para a aplicação;
-4. Executa `docker-compose up -d`.
-5. Acesse http://localhost . O nome do servidor está configurado no `server_name` no `nginx.conf`.
+4. Crie o certificado SSL (work in progress, solução definitiva em breve):
+    ```
+    openssl req -newkey rsa:4096 -sha256 -nodes -x509 \
+        -subj "/C=BR/ST=AL/L=Maceió/O=LED\ UFAL/CN=nes-ssp-al.led-ufal.xyz" \
+        -days 365 -keyout server.key -out server.crt
+    ```
+5. Execute `docker-compose up -d`.
+6. Inicialize a base de dados e crie o super usuário com o comando `docker exec -it coruja-application make init`
+7. Acesse `https://localhost`.
 
 ## :rotating_light: **Licença**
 

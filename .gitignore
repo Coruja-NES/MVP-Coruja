@@ -73,6 +73,7 @@ db.sqlite3-journal
 
 # Flask stuff:
 instance/
+migrations/
 
 # Scrapy stuff:
 .scrapy
@@ -291,3 +292,7 @@ pyrightconfig.json
 access.txt
 # .secrets.toml
 traefik
+
+# SSL
+server.key
+server.crt
